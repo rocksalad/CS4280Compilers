@@ -13,9 +13,10 @@ void printToken(token t) {
 
 void driver4Scanner(FILE *fp) {
     int lookahead;
+    int lineNum = 1;
     while((lookahead = fgetc(fp)) != EOF) {
         ungetc(lookahead, fp);
-        token t = scanner(fp);
+        token t = scanner(fp, lineNum);
         if(t.tokenId != ERR_tk) {
             printToken(t);
         } else {

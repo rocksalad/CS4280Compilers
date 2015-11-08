@@ -44,7 +44,7 @@ alphabetKey charLookup[19] = {
         {'}', 15},
         {';', 16},
         {'[', 17},
-        {']', 18},
+        {']', 18}
 };
 
 token keywordLookup[15] = {
@@ -62,7 +62,7 @@ token keywordLookup[15] = {
         {VOID_tk, "void", 0},
         {RETURN_tk, "return", 0},
         {PROG_tk, "program", 0},
-        {DUM_tk, "dummy", 0},
+        {DUM_tk, "dummy", 0}
 };
 
 tkMap tokenLookupTable[6] = {
@@ -118,10 +118,10 @@ int colLookup(char lookAhead) {
     }
 }
 
-token scanner(FILE *fp) {
+token scanner(FILE *fp, int &lineNum) {
     int lookahead;
     int stateCol;
-    int currState = 0, nextState = 0, lineNum = 1;
+    int currState = 0, nextState = 0;
     string word;
     token t;
 
@@ -151,7 +151,7 @@ token scanner(FILE *fp) {
                 t.name = "EOF";
                 return t;
             } else if (nextState >= 1000) {
-                t = tokenLookup(currState, word);
+                t = tokenLookup(nextState, word);
                 t.lineNum = lineNum;
                 ungetc(lookahead, fp);
                 return t;
@@ -173,7 +173,6 @@ token scanner(FILE *fp) {
                 if (lookahead2 == '=') {
                     word += static_cast<char>(lookahead2);
                 } else {
-                    word += static_cast<char>(lookahead2);
                     ungetc(lookahead2, fp);
                     t.tokenId = ERR_tk;
                     t.lineNum = lineNum;
@@ -183,8 +182,6 @@ token scanner(FILE *fp) {
             }
             currState = nextState;
         }
-
-        cout << word << endl;
 
     }
     t.tokenId = ERR_tk;

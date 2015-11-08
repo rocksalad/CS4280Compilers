@@ -16,7 +16,7 @@ struct token {
     int lineNum;
 };
 
-token scanner(FILE *fp);
+token scanner(FILE *fp, int &lineNum);
 
 
 #endif
