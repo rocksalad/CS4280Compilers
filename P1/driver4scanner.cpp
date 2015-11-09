@@ -1,16 +1,19 @@
 #include "driver4scanner.h"
 using namespace std;
 
+//token names for lookup with token enumeration
 string tokenNames[] = {"Identifier", "Number", "Begin keyword", "End keyword", "Start keyword", "Finish keyword",
                        "Then keyword", "If keyword", "Loop keyword", "Integer keyword", "Do keyword", "Scan keyword",
                        "Print keyword", "Void keyword", "Return keyword", "Program keyword", "Dummy keyword",
                        "Relational Operator", "Other Operator", "Delimeter", "End of File", "Error"};
 
 
+//function to print tokens
 void printToken(token t) {
         cout << "Line Num: " << t.lineNum << ", Token ID: " << tokenNames[t.tokenId] << ", Token Instance: " << t.name << "\n";
 }
 
+//driver called by main
 void driver4Scanner(FILE *fp) {
     int lookahead;
     int lineNum = 1;
