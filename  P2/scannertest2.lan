@@ -1,6 +1,0 @@
-PROGRAM
-INTEGER x, y;
-{ IF (x<y) THEN {
-	PRINT x;
-	}
-}
