@@ -16,7 +16,7 @@ comp <file>
 Where <file> is some file that ends in .lan (ex. comp file would compile and generate target code for file.lan). If no file is given input will be read in from keyboard line-by-line until EOF (ctrl+d on unix/linux).
 
 Compiler will take in code written in LAN (fake language professor came up with), and generate a target ASM file that runs on
-a specialized virtual machine the professor provided.
+a specialized virtual machine the professor provided. (A simple single-accumulator based assembler.)
 
 Errors can happen in 3 places:
 >1. Scanner recieves a bad token
