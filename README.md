@@ -26,7 +26,6 @@ Errors can happen in 3 places:
 
 LAN LANGUAGE:
 ```
-
 <program>  ->      PROGRAM <var> <block> 
 <block>    ->      { <var> <stats> }
 <var>      ->      empty | <type> Identifier <mvars> ;
