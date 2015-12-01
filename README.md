@@ -20,11 +20,12 @@ a specialized virtual machine the professor provided. (A simple single-accumulat
 
 Errors can happen in 3 places:
 >1. Scanner recieves a bad token
->2. Parser detects a syntax error
->3. During code generation if/when a semantic error is fine
+2. Parser detects a syntax error
+3. During code generation if/when a semantic error is fine
 
-```
+
 LAN LANGUAGE:
+```
 
 <program>  ->      PROGRAM <var> <block> 
 <block>    ->      { <var> <stats> }
